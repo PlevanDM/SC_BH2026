@@ -31,4 +31,16 @@ export function getTelegramUrl() {
   return `https://t.me/${SITE_CONFIG.telegramHandle}`;
 }
 
+export function getInstagramUrl() {
+  return `https://instagram.com/${SITE_CONFIG.social.instagram}`;
+}
+
+export function getFacebookUrl() {
+  return `https://facebook.com/${SITE_CONFIG.social.facebook}`;
+}
+
+export function getTikTokUrl() {
+  return `https://tiktok.com/${SITE_CONFIG.social.tiktok}`;
+}
+
 

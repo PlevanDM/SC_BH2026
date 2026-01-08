@@ -9,6 +9,19 @@ npm install
 npm run dev
 ```
 
+### RO App (Ремонлайн) Integration
+
+Booking forms automatically send data to RO App CRM:
+
+1. Get API key: RO App → Settings → API
+2. Create `.env.local`:
+   ```bash
+   ROAPP_API_KEY=your_api_key_here
+   ```
+3. Restart dev server
+
+Forms will create People/Inquiries in RO App. See: https://roapp.readme.io/reference/getting-started-with-api
+
 ## Production build
 
 ```bash
