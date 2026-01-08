@@ -1,0 +1,14 @@
+# NEXX GSM - Robots.txt
+# https://scbucharest.ro
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://scbucharest.ro/sitemap.xml
+
+# Disallow internal/admin paths (if any in future)
+Disallow: /admin/
+Disallow: /api/
+
+

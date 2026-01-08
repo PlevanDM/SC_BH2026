@@ -26,5 +26,26 @@ npm run start
 
 ## Deploy
 
-- **Vercel**: import repo, set Root Directory to `next-gsm/`, build command `npm run build`, output default.
-- **Any Node hosting**: run `npm run build` then `npm run start`.
+### GitHub Pages (Auto-deploy via Actions)
+
+Push to `main` triggers `.github/workflows/deploy-next-gsm-pages.yml`:
+- Builds static export (`next build` with `output: "export"`)
+- Publishes to GitHub Pages
+
+**Enable GitHub Pages**: Settings → Pages → Source: "GitHub Actions"
+
+### Vercel (Recommended for SSR/ISR)
+
+1. Import repo from GitHub
+2. **Root Directory**: `next-gsm/`
+3. **Build Command**: `npm run build`
+4. **Output Directory**: (default `.next`)
+5. Deploy!
+
+### Manual static export
+
+```bash
+npm run build  # outputs to next-gsm/out/
+```
+
+Upload `out/` to any static host (Netlify, Cloudflare Pages, etc).

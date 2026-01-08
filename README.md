@@ -18,9 +18,11 @@ npm run dev
 
 ```bash
 cd "next-gsm"
-npm run build
-npm run start
+npm run build       # static export → next-gsm/out/
+# або npm run start  # SSR mode (не потрібно для GitHub Pages)
 ```
+
+Деплой: дивіться `next-gsm/README.md` (GitHub Pages авто-деплой + Vercel інструкції).
 
 ### 🐳 Запуск в Docker (Рекомендовано)
 

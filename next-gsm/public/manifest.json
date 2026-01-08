@@ -30,7 +30,7 @@
       "name": "Калькулятор цін",
       "short_name": "Ціни",
       "description": "Розрахувати вартість ремонту",
-      "url": "/calculator",
+      "url": "/calculator/",
       "icons": [{"src": "/favicon.svg", "sizes": "96x96"}]
     }
   ],

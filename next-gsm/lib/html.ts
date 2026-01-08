@@ -52,16 +52,16 @@ function rewriteInternalLinks(html: string) {
   const replacements: Array<[RegExp, string]> = [
     [/href="\/index\.html"/gi, 'href="/"'],
     [/href="index\.html"/gi, 'href="/"'],
-    [/href="\/about\.html"/gi, 'href="/about"'],
-    [/href="about\.html"/gi, 'href="/about"'],
-    [/href="\/faq\.html"/gi, 'href="/faq"'],
-    [/href="faq\.html"/gi, 'href="/faq"'],
-    [/href="\/privacy\.html"/gi, 'href="/privacy"'],
-    [/href="privacy\.html"/gi, 'href="/privacy"'],
-    [/href="\/terms\.html"/gi, 'href="/terms"'],
-    [/href="terms\.html"/gi, 'href="/terms"'],
-    [/href="\/calculator\.html"/gi, 'href="/calculator"'],
-    [/href="calculator\.html"/gi, 'href="/calculator"'],
+    [/href="\/about\.html"/gi, 'href="/about/"'],
+    [/href="about\.html"/gi, 'href="/about/"'],
+    [/href="\/faq\.html"/gi, 'href="/faq/"'],
+    [/href="faq\.html"/gi, 'href="/faq/"'],
+    [/href="\/privacy\.html"/gi, 'href="/privacy/"'],
+    [/href="privacy\.html"/gi, 'href="/privacy/"'],
+    [/href="\/terms\.html"/gi, 'href="/terms/"'],
+    [/href="terms\.html"/gi, 'href="/terms/"'],
+    [/href="\/calculator\.html"/gi, 'href="/calculator/"'],
+    [/href="calculator\.html"/gi, 'href="/calculator/"'],
   ];
 
   let out = html;
