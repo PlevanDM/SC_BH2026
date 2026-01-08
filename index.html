@@ -106,20 +106,12 @@
     <meta name="theme-color" content="#0066ff">
     <meta name="msapplication-TileColor" content="#0066ff">
     
-    <!-- READABILITY FIRST 2026 - CRITICAL -->
-    <link rel="stylesheet" href="/readability-fix-2026.css">
-    
-    <!-- UNIFIED DESIGN SYSTEM -->
-    <link rel="stylesheet" href="/unified-styles.css">
-    
-    <!-- 21ST CENTURY DESIGN - DARK THEME -->
-    <link rel="stylesheet" href="/21st-design.css">
-    
-    <!-- 21ST CENTURY COMPONENTS -->
-    <link rel="stylesheet" href="/components-21st.css">
-    
-    <!-- LIGHT DESIGN WITH PHOTOS -->
-    <link rel="stylesheet" href="/light-design-photos.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/main.css">
 
     <!-- Site config (phone/address/socials) -->
     <script defer src="/site-config.js"></script>
@@ -220,7 +212,6 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
             background: white;
             line-height: 1.6;
@@ -354,6 +345,35 @@
 
         .nav-links a:hover::after {
             transform: scaleX(1);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            list-style: none;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0 0;
+            min-width: 200px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            padding: 0.5rem 1rem;
+            display: block;
+            width: 100%;
+            text-align: left;
         }
 
         .btn-primary {
@@ -1880,11 +1900,16 @@
                     <li role="none"><a href="#manager" role="menuitem">👨‍💼 Менеджер</a></li>
                     <li role="none"><a href="#gork" role="menuitem">🛡️ GORK</a></li>
                     <li role="none"><a href="#courses" role="menuitem">🎓 Курси</a></li>
-                    <li role="none"><a href="/calculator.html" role="menuitem">🧮 Калькулятор</a></li>
-                    <li role="none"><a href="/about.html" role="menuitem">ℹ️ Про Нас</a></li>
-                    <li role="none"><a href="/faq.html" role="menuitem">❓ FAQ</a></li>
-                    <li role="none"><a href="#contact" role="menuitem">📍 Контакти</a></li>
-            </ul>
+                    <li class="dropdown" role="none">
+                        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Більше ▼</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="none"><a href="/calculator.html" role="menuitem">🧮 Калькулятор</a></li>
+                            <li role="none"><a href="/about.html" role="menuitem">ℹ️ Про Нас</a></li>
+                            <li role="none"><a href="/faq.html" role="menuitem">❓ FAQ</a></li>
+                            <li role="none"><a href="#contact" role="menuitem">📍 Контакти</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             
             <div class="nav-right">
@@ -2042,11 +2067,11 @@
                 <button class="btn-primary" onclick="openBooking()" 
                         style="background: linear-gradient(135deg, var(--success), var(--success-dark)); position: relative;"
                         title="Записатися на прийом до сервіс-центру SC Bucharest">
-                    📅 <span data-i18n="btn_booking_primary">Безплатна Консультація</span>
+                    📅 <span data-i18n="btn_booking_primary">Отримати безплатну консультацію</span>
                     <span class="urgency-badge" style="position: relative; top: 0; right: 0; margin-left: 0.5rem;">Сьогодні</span>
                 </button>
                 <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})" title="Дізнатися більше про послуги сервіс-центру">
-                    ↓ <span data-i18n="btn_learn_more">Дізнатися більше</span>
+                    ↓ <span data-i18n="btn_learn_more">Переглянути послуги</span>
                 </button>
             </div>
             
@@ -2054,6 +2079,16 @@
             <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
                 ⏰ <strong style="color: var(--warning);">Обмежено:</strong> Лише <span id="slots-left" style="color: var(--warning); font-weight: 700;">5 слотів</span> залишилось на цей тиждень
             </p>
+
+            <!-- Social Proof: Rating -->
+            <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                <div style="color: #ffc107; font-size: 1.25rem;">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <strong>4.9/5.0</strong> <span style="color: rgba(255,255,255,0.6);"> (150+ відгуків)</span>
+                </span>
+            </div>
             </div>
             
             <!-- Right: REAL PHOTOS - Trust Building -->
@@ -2895,33 +2930,6 @@
                            placeholder="+40 7XX XXX XXX" 
                            title="Введіть валідний номер телефону">
                 </div>
-                <div class="form-group">
-                    <label for="booking-email">Email</label>
-                    <input type="email" id="booking-email" required placeholder="your@email.com" title="Введіть ваш email">
-                </div>
-                <div class="form-group">
-                    <label for="device-type">Тип Пристрою</label>
-                    <select id="device-type" required title="Виберіть тип пристрою">
-                        <option value="">Виберіть пристрій</option>
-                        <option value="iphone">iPhone (Apple)</option>
-                        <option value="android">Android Телефон</option>
-                        <option value="laptop">Ноутбук (MacBook, Windows)</option>
-                        <option value="ipad">iPad / Планшет</option>
-                        <option value="watch">Смарт-Годинник</option>
-                        <option value="other">Інше (опишіть нижче)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="booking-problem">Опис Проблеми</label>
-                    <textarea id="booking-problem" required 
-                              minlength="10" maxlength="500"
-                              placeholder="Розповідайте про вашу проблему..." 
-                              title="Опишіть проблему (мін. 10 символів)"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="booking-date">Дата Прийому</label>
-                    <input type="date" id="booking-date" required title="Виберіть дату прийому">
-                </div>
                 <button type="submit" class="btn-primary" style="width: 100%;" title="Підтвердити запис">Записатися</button>
             </form>
         </div>
@@ -3151,11 +3159,7 @@
             // Збираємо дані форми
             const formData = {
                 name: document.getElementById('booking-name')?.value || '',
-                phone: document.getElementById('booking-phone')?.value || '',
-                email: document.getElementById('booking-email')?.value || '',
-                device: document.getElementById('device-type')?.value || '',
-                problem: document.getElementById('booking-problem')?.value || '',
-                date: document.getElementById('booking-date')?.value || ''
+                phone: document.getElementById('booking-phone')?.value || ''
             };
             
             // Симулюємо відправку (тут буде ваш API)
@@ -3662,6 +3666,28 @@
             }, { passive: true });
         }
         
+        // ===== DROPDOWN MENU =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const isExpanded = dropdownToggle.getAttribute('aria-expanded') === 'true';
+                    dropdownToggle.setAttribute('aria-expanded', !isExpanded);
+                    dropdownMenu.style.display = isExpanded ? 'none' : 'block';
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                        dropdownToggle.setAttribute('aria-expanded', 'false');
+                        dropdownMenu.style.display = 'none';
+                    }
+                });
+            }
+        });
+
         // ===== 3D CARD TILT (2026 Trend) =====
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card, .pricing-card');
