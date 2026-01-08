@@ -1,15 +1,24 @@
-# 🚀 SC BUCHAREST - PRODUCTION DEPLOYMENT GUIDE
+# 🚀 NEXX GSM - PRODUCTION DEPLOYMENT GUIDE
 
 ## 📦 QUICK START
 
+## ✅ Next.js (рекомендовано)
+
+Додаток знаходиться в `next-gsm/`.
+
 ```bash
-# 1. Clone or upload files to server
-git clone <repository> /var/www/scbucharest
+git clone <repository> /var/www/nexx-gsm
+cd /var/www/nexx-gsm/next-gsm
+npm install
+npm run build
+npm run start
+```
 
-# 2. Install dependencies (if using Docker)
-docker-compose up -d
+Для reverse-proxy (Nginx) проксувати на `127.0.0.1:3000`.
 
-# 3. Or use simple HTTP server
+## Legacy static (якщо потрібно)
+
+```bash
 npx http-server -p 8000 -c-1
 ```
 
@@ -18,7 +27,9 @@ npx http-server -p 8000 -c-1
 ## ⚙️ CONFIGURATION REQUIRED
 
 ### **1. Contact Information**
-Update in all HTML files:
+Оновіть значення контактів у:
+- `next-gsm/lib/site-config.ts` (Next.js)
+- (опційно) legacy HTML файлах
 
 ```html
 Phone: +40 (0) XXX XXX XXX  →  +40 721 XXX XXX (real)
@@ -26,14 +37,14 @@ Email: info@scbucharest.ro  →  (verify mailbox exists)
 ```
 
 ### **2. Google Analytics**
-Replace in `index.html` line ~142:
+Додайте GA у Next.js (App Router) через `app/layout.tsx` або окремий компонент.
 
 ```javascript
 gtag('config', 'G-XXXXXXXXXX')  →  'G-YOUR-REAL-GA-ID'
 ```
 
 ### **3. Social Media Links**
-Update in floating buttons:
+Оновіть у `next-gsm/lib/site-config.ts`
 
 ```javascript
 WhatsApp: https://wa.me/40XXXXXXXXX
@@ -41,7 +52,7 @@ Telegram: https://t.me/scbucharest  (verify handle exists)
 ```
 
 ### **4. Google Maps**
-Replace iframe in contact section with real location
+Оновіть координати в `next-gsm/lib/site-config.ts`
 
 ---
 
