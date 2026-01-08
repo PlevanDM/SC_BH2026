@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1200"
+    height="300"
+    viewBox="0 0 1200 300"
+    fill="none">
+
+  <!-- Цвет -->
+  <defs>
+    <style>
+      .text { fill:#0A3D78; font-family:Arial, Helvetica, sans-serif; font-weight:700; }
+    </style>
+  </defs>
+
+  <!-- NEXX -->
+  <text x="50" y="200" font-size="180" class="text" letter-spacing="-5">
+    NEXX
+  </text>
+
+  <!-- Стрелка над X -->
+  <rect
+    x="520"
+    y="35"
+    width="120"
+    height="22"
+    rx="10"
+    transform="rotate(-35 520 35)"
+    fill="#0A3D78"/>
+
+  <!-- GSM -->
+  <text x="720" y="200" font-size="140" class="text" letter-spacing="5">
+    GSM
+  </text>
+
+</svg>
+
