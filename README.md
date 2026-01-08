@@ -1,169 +1,181 @@
-﻿# NEXX GSM — сайт (static + Next.js)
+﻿# NEXX GSM — Device Repair Service
 
-Преміум сервіс-центр по ремонту телефонів, ноутбуків та мобільної електроніки у Бухаресті.
-
-## 🚀 Швидкий Старт
-
-### ✅ Новий Next.js застосунок (React + TS + Tailwind v4)
-
-Міграція в React/Next.js знаходиться в папці `next-gsm/`.
-
-```bash
-cd "next-gsm"
-npm install
-npm run dev
-```
-
-Продакшн-білд:
-
-```bash
-cd "next-gsm"
-npm run build       # static export → next-gsm/out/
-# або npm run start  # SSR mode (не потрібно для GitHub Pages)
-```
-
-Деплой: дивіться `next-gsm/README.md` (GitHub Pages авто-деплой + Vercel інструкції).
-
-### 🐳 Запуск в Docker (Рекомендовано)
-
-1. **Збілдити та запустити контейнер:**
-   ```bash
-   # Через docker-compose (найпростіше)
-   docker-compose up -d
-   
-   # Або через docker
-   docker build -t sc-bucharest .
-   docker run -d -p 8080:80 --name sc-bucharest-website sc-bucharest
-   ```
-
-2. **Відкрити в браузері:**
-   - `http://localhost:8080`
-
-3. **Зупинити контейнер:**
-   ```bash
-   docker-compose down
-   # або
-   docker stop sc-bucharest-website
-   ```
-
-### Локальний Запуск (Без Docker)
-
-1. **Відкрити файл напряму:**
-   - Подвійний клік на `index.html`
-   - Або перетягнути файл у браузер
-
-2. **Через HTTP сервер:**
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Або Node.js
-   npx http-server -p 8000
-   ```
-   Потім відкрити: `http://localhost:8000`
-
-## 📁 Структура Проекту
-
-```
-NEXX GSM/
-├── index.html          # Головна сторінка
-├── privacy.html        # Політика приватності
-├── terms.html          # Умови використання
-├── robots.txt          # SEO: правила для пошукових роботів
-├── sitemap.xml         # SEO: карта сайту
-├── favicon.svg         # Іконка сайту
-├── Dockerfile          # Docker конфігурація
-├── docker-compose.yml  # Docker Compose конфігурація
-├── nginx.conf          # Nginx конфігурація
-├── .dockerignore       # Файли для ігнорування в Docker
-└── README.md           # Цей файл
-```
-
-## ✨ Функціональність
-
-### Основні Секції:
-- ✅ **Послуги** - ремонт, діагностика, чистка, кастомізація, trade-in
-- ✅ **Менеджер-Підписка** - €9.99/місяць, безлімітні чистки, 24/7 підтримка
-- ✅ **GORK Protect** - програма захисту з безплатним кейсом
-- ✅ **Дитячі Курси** - малювання, програмування, фотографія
-- ✅ **Тарифи** - прозорі ціни на послуги
-- ✅ **Контакти** - адреса, телефон, email, соцмережі
-
-### SEO Оптимізація:
-- ✅ Meta tags (title, description, keywords)
-- ✅ Open Graph для соцмереж
-- ✅ Schema.org структурована розмітка
-- ✅ Canonical URLs
-- ✅ Sitemap.xml
-- ✅ Robots.txt
-
-### Технічні Особливості:
-- ✅ Responsive дизайн (мобільні, планшети, десктоп)
-- ✅ Плавна навігація
-- ✅ Модальні вікна для запису
-- ✅ Форми з валідацією
-- ✅ Google Analytics готовий (потрібно додати ID)
-
-## 🔧 Налаштування
-
-### Google Analytics
-1. Отримайте Tracking ID з Google Analytics
-2. Відкрийте `index.html`
-3. Знайдіть рядок: `gtag('config', 'G-XXXXXXXXXX');`
-4. Замініть `G-XXXXXXXXXX` на ваш реальний ID
-
-### Контактна Інформація
-Оновіть в `index.html`:
-- Телефон: `+40 (0) XXX XXX XXX`
-- Email: `info@scbucharest.ro`
-- Адреса: `Sector 1, Bucuresti, Romania`
-
-### Соцмережі
-Оновіть посилання на соцмережі:
-- Instagram: `https://www.instagram.com/scbucharest`
-- Facebook: `https://www.facebook.com/scbucharest`
-- TikTok: `https://www.tiktok.com/@scbucharest`
-- Telegram: `https://t.me/scbucharest`
-
-## 📱 Додавання Зображень
-
-Для кращого вигляду додайте:
-- `logo.png` - логотип (рекомендовано 200x200px)
-- `og-image.jpg` - зображення для соцмереж (1200x630px)
-- `favicon.ico` - іконка сайту (16x16, 32x32, 48x48px)
-- Фото інтер'єру сервіс-центру
-- Фото робіт та послуг
-
-## 🌐 Деплой на Хостинг
-
-### Рекомендовані Хостинги:
-- **Netlify** - безкоштовний, простий деплой
-- **Vercel** - швидкий, для статичних сайтів
-- **GitHub Pages** - безкоштовний через Git
-- **Cloudflare Pages** - швидкий CDN
-
-### Кроки для Netlify:
-1. Зареєструйтесь на netlify.com
-2. Перетягніть папку проекту
-3. Сайт буде доступний за 5 хвилин!
-
-## 📝 TODO (Наступні Кроки)
-
-- [ ] Додати реальні фото інтер'єру
-- [ ] Створити галерею робіт
-- [ ] Інтегрувати платіжну систему (Stripe/PayPal)
-- [ ] Додати календар бронювання
-- [ ] Створити блог з порадами
-- [ ] Додати мультимовність (RO/EN)
-- [ ] Інтегрувати з CRM системою
-
-## 📞 Підтримка
-
-Питання? Зв'яжіться:
-- Email: info@scbucharest.ro
-- Телефон: +40 (0) XXX XXX XXX
+Premium сервіс-центр по ремонту телефонів, ноутбуків та мобільної електроніки у Бухаресті.
 
 ---
 
-© 2026 NEXX GSM. Всі права захищені.
+## 🚀 Quick Start
 
+### Production App (Next.js) — Recommended
+
+```bash
+cd next-gsm
+npm install
+npm run dev    # Development → http://localhost:3000
+npm run build  # Production build → next-gsm/out/
+```
+
+**Deploy:** Auto-deploy via GitHub Actions → GitHub Pages  
+**Docs:** [`next-gsm/README.md`](./next-gsm/README.md)
+
+### RO App (Remonline) Integration
+
+Booking forms send data to RO App CRM:
+
+1. Get API key: RO App → Settings → API  
+2. Create `next-gsm/.env.local`:
+   ```bash
+   ROAPP_API_KEY=your_api_key_here
+   ```
+3. Restart dev server
+
+See: https://roapp.readme.io/reference/getting-started-with-api
+
+---
+
+## 📁 Project Structure
+
+```
+C:\SC Bucharest\
+├── next-gsm/              ← 🎯 MAIN Next.js app (React + TS + Tailwind v4)
+│   ├── app/               ← Routes: /, /about, /faq, /calculator, etc
+│   ├── components/        ← UI components (Button/Card/Badge) + site (Shell/ThemeToggle)
+│   ├── lib/               ← Utils, site-config, RO App API client
+│   ├── public/            ← Static assets (images, icons, manifest)
+│   └── README.md          ← Next.js app docs
+│
+├── legacy/                ← Old static HTML site (backup)
+│   ├── index.html         ← Static homepage
+│   ├── *.html             ← Other pages
+│   └── main.css           ← Legacy styles
+│
+├── scripts/               ← Deployment scripts
+│   ├── Dockerfile         ← Docker config
+│   ├── docker-compose.yml ← Docker Compose
+│   └── *.bat, *.sh        ← Docker helper scripts
+│
+├── docs/                  ← Documentation
+│   ├── DEPLOYMENT.md      ← Deploy guides (GitHub Pages/Vercel)
+│   ├── GITHUB-PAGES-SETUP.md ← Quick Pages setup
+│   └── *.md               ← Other guides
+│
+├── images/                ← Shared images (used by both legacy and next-gsm)
+│   ├── reception.png
+│   ├── workspace.png
+│   └── facade.png
+│
+└── README.md              ← This file
+```
+
+---
+
+## ✨ Features
+
+**Next.js App:**
+- ⚛️ React 19 + TypeScript
+- 🎨 Tailwind CSS v4 (OKLCH colors, dark mode)
+- 🧩 Shadcn/ui components
+- ✨ Framer Motion animations
+- 🎯 Lucide icons (no emoji)
+- 📸 Real photos integration
+- 🔄 RO App API (Remonline CRM)
+- 📱 Fully responsive
+- ♿ Accessible (ARIA, semantic HTML)
+- 🔒 SEO optimized (robots, sitemap, OG tags)
+
+**Pages:**
+- `/` — Homepage (hero, services, pricing, GORK, courses, contact, gallery)
+- `/about` — About us
+- `/faq` — Frequently asked questions
+- `/calculator` — Repair cost calculator
+- `/privacy` — Privacy policy (GDPR compliant)
+- `/terms` — Terms of service
+- `/api/booking` — Booking API (→ RO App)
+
+---
+
+## 🎯 Commands (Root)
+
+```bash
+# Next.js app (from root)
+npm run next:install  # Install dependencies
+npm run next:dev      # Start dev server
+npm run next:build    # Production build
+npm run next:lint     # Run linter
+npm run next:start    # Start production server
+
+# Legacy static (for reference)
+npm run start         # Simple HTTP server on :8000
+
+# Docker (legacy static site)
+cd scripts
+docker-compose up -d  # Start
+docker-compose down   # Stop
+```
+
+---
+
+## 🌐 Deployment
+
+### GitHub Pages (Auto)
+
+1. **Enable Pages:** Settings → Pages → Source: "GitHub Actions"
+2. **Push to main** → auto-deploy via `.github/workflows/deploy-next-gsm-pages.yml`
+3. **Live URL:** `https://plevandm.github.io/SC_BH2026/`
+
+**Details:** [`GITHUB-PAGES-SETUP.md`](./GITHUB-PAGES-SETUP.md)
+
+### Vercel (Alternative)
+
+1. Import repo → Root Directory: `next-gsm/`
+2. Deploy
+
+**Details:** [`DEPLOYMENT.md`](./DEPLOYMENT.md)
+
+---
+
+## 📖 Documentation
+
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** — Deploy guides (GitHub Pages + Vercel)
+- **[GITHUB-PAGES-SETUP.md](./GITHUB-PAGES-SETUP.md)** — Quick 3-step setup
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** — Contribution guidelines
+- **[next-gsm/README.md](./next-gsm/README.md)** — Next.js app docs
+- **[docs/](./docs/)** — Additional guides
+
+---
+
+## 🔧 Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| **Frontend** | Next.js 16, React 19, TypeScript |
+| **Styling** | Tailwind CSS v4, OKLCH colors |
+| **Components** | Shadcn/ui, Radix UI |
+| **Icons** | Lucide React |
+| **Animations** | Framer Motion |
+| **Forms** | React hooks, server actions |
+| **CRM** | RO App API (Remonline) |
+| **Deploy** | GitHub Pages (static export) / Vercel (SSR) |
+
+---
+
+## 🤝 Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+
+---
+
+## 📜 License
+
+MIT © 2026 NEXX GSM
+
+---
+
+## 📞 Support
+
+- 📧 Email: info@scbucharest.ro
+- 📱 Phone: +40 721 000 000
+- 🌐 Website: https://scbucharest.ro
+- 📖 Docs: [docs/](./docs/)
+
+**Made with ❤️ by NEXX GSM team**
