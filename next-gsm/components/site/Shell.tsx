@@ -7,10 +7,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-          <Link href="/" className="flex items-center gap-3 font-semibold">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="NEXX GSM" className="h-8 w-auto" />
-            <span className="hidden sm:inline">NEXX GSM</span>
+            <img src="/logo-compact.svg" alt="NEXX GSM" className="h-10 w-auto dark:invert" />
           </Link>
 
           <nav className="flex items-center gap-3 text-sm">

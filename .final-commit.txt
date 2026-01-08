@@ -1,0 +1,14 @@
+READY TO COMMIT:
+
+git add -A
+git commit -m "Fix logo: add compact version for header, improve visibility"
+git push origin main
+
+FILES CHANGED:
+- next-gsm/public/logo-compact.svg (NEW) — optimized 200x48 logo
+- next-gsm/components/site/Shell.tsx (MODIFIED) — use logo-compact, h-10 size, dark:invert
+- MIGRATION-GUIDE.md (NEW) — migration docs
+
+WHEN TERMINAL WORKS:
+Run above commands to push final fixes.
+
