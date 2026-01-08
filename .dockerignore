@@ -1,0 +1,20 @@
+# .dockerignore для SC Bucharest
+
+# Виключаємо непотрібні файли з Docker образу
+node_modules/
+.git/
+.gitignore
+*.md
+README.md
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Виключаємо PDF файли (якщо не потрібні в образі)
+*.pdf
+
+# Виключаємо HTML файли які не потрібні (якщо є)
+# test.html
+# old.html

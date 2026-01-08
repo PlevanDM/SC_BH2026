@@ -1,0 +1,30 @@
+# SC Bucharest - Robots.txt
+# https://scbucharest.ro
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://scbucharest.ro/sitemap.xml
+
+# Disallow internal/admin paths (if any in future)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay for polite bots
+User-agent: *
+Crawl-delay: 1

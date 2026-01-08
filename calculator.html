@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Вартості Ремонту - SC Bucharest</title>
+    <meta name="description" content="Розрахуйте орієнтовну вартість ремонту вашого пристрою онлайн. iPhone, Android, MacBook, iPad - швидкий розрахунок цін у SC Bucharest.">
+    <meta name="keywords" content="калькулятор ремонту телефону, вартість ремонту iPhone, ціна заміни екрану, ремонт Бухарест">
+    <link rel="canonical" href="https://scbucharest.ro/calculator.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Калькулятор Вартості Ремонту - SC Bucharest">
+    <meta property="og:description" content="Розрахуйте орієнтовну вартість ремонту вашого пристрою онлайн">
+    <meta property="og:url" content="https://scbucharest.ro/calculator.html">
+    <meta property="og:type" content="website">
+    
+    <!-- READABILITY FIRST 2026 -->
+    <link rel="stylesheet" href="/readability-fix-2026.css">
+    
+    <!-- UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="/unified-styles.css">
+    <link rel="stylesheet" href="/21st-design.css">
+    <link rel="stylesheet" href="/components-21st.css">
+    <link rel="stylesheet" href="/light-design-photos.css">
+
+    <!-- Site config (phone/address/socials) -->
+    <script defer src="/site-config.js"></script>
+    
+    <style>
+        :root {
+            --primary: #0066ff;
+            --secondary: #00d4ff;
+            --dark: #0a0e27;
+            --text: #1a1a1a;
+            --text-light: #6b7280;
+            --light: #f8f9fa;
+            --border: #e9ecef;
+            --success: #51cf66;
+            --warning: #ffc107;
+            --danger: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--dark) 0%, #1a2d5a 50%, var(--dark) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .step {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .option-btn {
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 212, 255, 0.1));
+        }
+
+        .option-btn .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .option-btn .label {
+            font-weight: 600;
+            color: var(--text);
+            display: block;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            border-color: var(--primary);
+        }
+
+        .service-item.selected {
+            border-color: var(--success);
+            background: rgba(81, 207, 102, 0.1);
+        }
+
+        .service-item .service-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-item .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .service-item.selected .checkbox {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .service-item .service-name {
+            font-weight: 500;
+        }
+
+        .service-item .service-price {
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .result-section {
+            background: linear-gradient(135deg, var(--dark), #1a2d5a);
+            border-radius: 16px;
+            padding: 2rem;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .result-total {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-note {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .time-estimate {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .time-estimate .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Sticky Header */
+        .calc-header {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.8rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .header-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .header-links a:hover {
+            color: white;
+        }
+
+        .header-links .cta-link {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .header-links .cta-link:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            .calc-header {
+                padding: 0.8rem 1rem;
+            }
+
+            .header-links a:not(.cta-link) {
+                display: none;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .calculator-card {
+                padding: 1.5rem;
+            }
+
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .option-btn {
+                padding: 0.8rem;
+            }
+
+            .option-btn .icon {
+                font-size: 1.5rem;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .service-price {
+                align-self: flex-end;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+
+            .option-btn {
+                padding: 0.6rem;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="light-photos">
+    <!-- Sticky Header -->
+    <header class="calc-header">
+        <div class="header-nav">
+            <a href="/" class="logo" title="SC Bucharest">SC Bucharest</a>
+            <nav class="header-links">
+                <a href="/#services" title="Послуги">Послуги</a>
+                <a href="/faq.html" title="FAQ">FAQ</a>
+                <a href="/#contact" class="cta-link" title="Записатися">Записатися</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="/" class="back-link" aria-label="Повернутися на головну">← Повернутися на головну</a>
+        
+        <div class="header">
+            <h1>🔧 Калькулятор Вартості Ремонту</h1>
+            <p>Оберіть ваш пристрій та послуги для розрахунку орієнтовної вартості</p>
+        </div>
+        
+        <div class="calculator-card">
+            <!-- Крок 1: Тип пристрою -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Оберіть тип пристрою</div>
+                </div>
+                <div class="options-grid" id="device-options">
+                    <button class="option-btn" data-device="iphone" onclick="selectDevice('iphone')">
+                        <span class="icon">📱</span>
+                        <span class="label">iPhone</span>
+                    </button>
+                    <button class="option-btn" data-device="android" onclick="selectDevice('android')">
+                        <span class="icon">📲</span>
+                        <span class="label">Android</span>
+                    </button>
+                    <button class="option-btn" data-device="macbook" onclick="selectDevice('macbook')">
+                        <span class="icon">💻</span>
+                        <span class="label">MacBook</span>
+                    </button>
+                    <button class="option-btn" data-device="laptop" onclick="selectDevice('laptop')">
+                        <span class="icon">🖥️</span>
+                        <span class="label">Ноутбук</span>
+                    </button>
+                    <button class="option-btn" data-device="ipad" onclick="selectDevice('ipad')">
+                        <span class="icon">📋</span>
+                        <span class="label">iPad</span>
+                    </button>
+                    <button class="option-btn" data-device="watch" onclick="selectDevice('watch')">
+                        <span class="icon">⌚</span>
+                        <span class="label">Годинник</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Крок 2: Послуги -->
+            <div class="step" id="services-step" style="display: none;">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Оберіть необхідні послуги</div>
+                </div>
+                <div class="services-list" id="services-list">
+                    <!-- Заповнюється через JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Результат -->
+            <div class="result-section" id="result-section" style="display: none;">
+                <div class="result-header">
+                    <div class="result-title">Орієнтовна вартість:</div>
+                    <div class="result-total" id="total-price">€0</div>
+                </div>
+                <div class="result-note">
+                    * Фінальна ціна може відрізнятися після діагностики. Діагностика безплатна при замовленні ремонту.
+                </div>
+                <div class="time-estimate" id="time-estimate">
+                    <span class="icon">⏱️</span>
+                    <span>Орієнтовний час: <strong id="time-value">30 хвилин</strong></span>
+                </div>
+                <div class="result-actions">
+                    <a href="/#contact" class="btn btn-primary">
+                        📞 Записатися на ремонт
+                    </a>
+                    <button class="btn btn-secondary" onclick="resetCalculator()">
+                        🔄 Почати заново
+                    </button>
+                </div>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(81, 207, 102, 0.2); border-radius: 10px;">
+                    <strong>💡 Підписники Менеджера</strong> отримують <span class="discount-badge">-20%</span> на всі послуги!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Прайс-лист послуг
+        const services = {
+            iphone: [
+                { id: 'screen', name: 'Заміна дисплея', price: 80, time: 30 },
+                { id: 'battery', name: 'Заміна батареї', price: 45, time: 20 },
+                { id: 'charging', name: 'Ремонт роз\'єму зарядки', price: 35, time: 25 },
+                { id: 'speaker', name: 'Заміна динаміка', price: 30, time: 20 },
+                { id: 'camera', name: 'Ремонт камери', price: 55, time: 30 },
+                { id: 'water', name: 'Відновлення після води', price: 70, time: 60 },
+                { id: 'glass', name: 'Заміна заднього скла', price: 60, time: 45 },
+                { id: 'diagnostic', name: 'Діагностика', price: 15, time: 15 }
+            ],
+            android: [
+                { id: 'screen', name: 'Заміна дисплея', price: 65, time: 40 },
+                { id: 'battery', name: 'Заміна батареї', price: 35, time: 25 },
+                { id: 'charging', name: 'Ремонт роз\'єму зарядки', price: 30, time: 30 },
+                { id: 'speaker', name: 'Заміна динаміка', price: 25, time: 20 },
+                { id: 'camera', name: 'Ремонт камери', price: 45, time: 35 },
+                { id: 'water', name: 'Відновлення після води', price: 60, time: 60 },
+                { id: 'software', name: 'Переустановка системи', price: 25, time: 30 },
+                { id: 'diagnostic', name: 'Діагностика', price: 15, time: 15 }
+            ],
+            macbook: [
+                { id: 'screen', name: 'Заміна дисплея', price: 250, time: 90 },
+                { id: 'battery', name: 'Заміна батареї', price: 120, time: 60 },
+                { id: 'keyboard', name: 'Заміна клавіатури', price: 150, time: 90 },
+                { id: 'ssd', name: 'Заміна/Апгрейд SSD', price: 80, time: 45 },
+                { id: 'cleaning', name: 'Глибока чистка', price: 45, time: 60 },
+                { id: 'thermal', name: 'Заміна термопасти', price: 35, time: 45 },
+                { id: 'water', name: 'Відновлення після води', price: 150, time: 120 },
+                { id: 'diagnostic', name: 'Діагностика', price: 25, time: 30 }
+            ],
+            laptop: [
+                { id: 'screen', name: 'Заміна дисплея', price: 120, time: 60 },
+                { id: 'battery', name: 'Заміна батареї', price: 60, time: 30 },
+                { id: 'keyboard', name: 'Заміна клавіатури', price: 70, time: 60 },
+                { id: 'ram', name: 'Апгрейд RAM', price: 40, time: 30 },
+                { id: 'ssd', name: 'Заміна/Апгрейд SSD', price: 50, time: 30 },
+                { id: 'cleaning', name: 'Глибока чистка', price: 35, time: 45 },
+                { id: 'thermal', name: 'Заміна термопасти', price: 25, time: 30 },
+                { id: 'diagnostic', name: 'Діагностика', price: 20, time: 20 }
+            ],
+            ipad: [
+                { id: 'screen', name: 'Заміна дисплея', price: 120, time: 60 },
+                { id: 'battery', name: 'Заміна батареї', price: 65, time: 45 },
+                { id: 'charging', name: 'Ремонт роз\'єму зарядки', price: 45, time: 30 },
+                { id: 'button', name: 'Ремонт кнопки Home', price: 40, time: 30 },
+                { id: 'camera', name: 'Ремонт камери', price: 50, time: 35 },
+                { id: 'water', name: 'Відновлення після води', price: 80, time: 90 },
+                { id: 'diagnostic', name: 'Діагностика', price: 20, time: 20 }
+            ],
+            watch: [
+                { id: 'screen', name: 'Заміна дисплея', price: 90, time: 45 },
+                { id: 'battery', name: 'Заміна батареї', price: 55, time: 30 },
+                { id: 'crown', name: 'Ремонт Digital Crown', price: 40, time: 30 },
+                { id: 'sensor', name: 'Калібрування сенсорів', price: 30, time: 20 },
+                { id: 'water', name: 'Відновлення водозахисту', price: 45, time: 30 },
+                { id: 'diagnostic', name: 'Діагностика', price: 15, time: 15 }
+            ]
+        };
+
+        let selectedDevice = null;
+        let selectedServices = [];
+
+        function selectDevice(device) {
+            selectedDevice = device;
+            selectedServices = [];
+            
+            // Оновити UI вибору пристрою
+            document.querySelectorAll('#device-options .option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.querySelector(`[data-device="${device}"]`).classList.add('selected');
+            
+            // Показати послуги
+            renderServices(device);
+            document.getElementById('services-step').style.display = 'block';
+            document.getElementById('result-section').style.display = 'none';
+            
+            // Прокрутити до послуг
+            document.getElementById('services-step').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function renderServices(device) {
+            const servicesList = document.getElementById('services-list');
+            const deviceServices = services[device];
+            
+            servicesList.innerHTML = deviceServices.map(service => `
+                <div class="service-item" data-id="${service.id}" onclick="toggleService('${service.id}')">
+                    <div class="service-info">
+                        <div class="checkbox">✓</div>
+                        <span class="service-name">${service.name}</span>
+                    </div>
+                    <span class="service-price">€${service.price}</span>
+                </div>
+            `).join('');
+        }
+
+        function toggleService(serviceId) {
+            const serviceItem = document.querySelector(`.service-item[data-id="${serviceId}"]`);
+            
+            if (selectedServices.includes(serviceId)) {
+                selectedServices = selectedServices.filter(id => id !== serviceId);
+                serviceItem.classList.remove('selected');
+            } else {
+                selectedServices.push(serviceId);
+                serviceItem.classList.add('selected');
+            }
+            
+            updateTotal();
+        }
+
+        function updateTotal() {
+            if (selectedServices.length === 0) {
+                document.getElementById('result-section').style.display = 'none';
+                return;
+            }
+            
+            const deviceServices = services[selectedDevice];
+            let total = 0;
+            let totalTime = 0;
+            
+            selectedServices.forEach(serviceId => {
+                const service = deviceServices.find(s => s.id === serviceId);
+                if (service) {
+                    total += service.price;
+                    totalTime += service.time;
+                }
+            });
+            
+            document.getElementById('total-price').textContent = `€${total}`;
+            
+            // Форматувати час
+            let timeText;
+            if (totalTime < 60) {
+                timeText = `${totalTime} хвилин`;
+            } else {
+                const hours = Math.floor(totalTime / 60);
+                const mins = totalTime % 60;
+                timeText = mins > 0 ? `${hours} год ${mins} хв` : `${hours} годин${hours > 1 ? 'и' : 'а'}`;
+            }
+            document.getElementById('time-value').textContent = timeText;
+            
+            document.getElementById('result-section').style.display = 'block';
+            document.getElementById('result-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetCalculator() {
+            selectedDevice = null;
+            selectedServices = [];
+            
+            document.querySelectorAll('#device-options .option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.getElementById('services-step').style.display = 'none';
+            document.getElementById('result-section').style.display = 'none';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Калькулятор Вартості Ремонту - SC Bucharest",
+        "description": "Онлайн калькулятор для розрахунку орієнтовної вартості ремонту телефонів, ноутбуків та планшетів",
+        "url": "https://scbucharest.ro/calculator.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "15",
+            "highPrice": "200",
+            "priceCurrency": "EUR",
+            "offerCount": "50+"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "SC Bucharest",
+            "url": "https://scbucharest.ro"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://scbucharest.ro/"},
+                {"@type": "ListItem", "position": 2, "name": "Калькулятор", "item": "https://scbucharest.ro/calculator.html"}
+            ]
+        }
+    }
+    </script>
+</body>
+</html>

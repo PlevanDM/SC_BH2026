@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Нас - SC Bucharest | Сервіс-центр Електроніки</title>
+    <meta name="description" content="Дізнайтеся більше про SC Bucharest - новий сервіс-центр електроніки у Бухаресті. Наша місія, цінності та команда.">
+    <meta name="keywords" content="про нас, SC Bucharest, сервіс-центр Бухарест, ремонт телефонів, команда">
+    <link rel="canonical" href="https://scbucharest.ro/about.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Про Нас - SC Bucharest">
+    <meta property="og:description" content="Новий сервіс-центр електроніки у Бухаресті - якість та чесність">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scbucharest.ro/about.html">
+    <meta property="og:image" content="https://scbucharest.ro/favicon.svg">
+    <meta property="og:locale" content="uk_UA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Про Нас - SC Bucharest">
+    <meta name="twitter:description" content="Новий сервіс-центр електроніки у Бухаресті">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#0066ff">
+    
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- READABILITY FIRST 2026 -->
+    <link rel="stylesheet" href="/readability-fix-2026.css">
+    
+    <!-- UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="/unified-styles.css">
+    <link rel="stylesheet" href="/21st-design.css">
+    <link rel="stylesheet" href="/components-21st.css">
+    <link rel="stylesheet" href="/light-design-photos.css">
+
+    <!-- Site config (phone/address/socials) -->
+    <script defer src="/site-config.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0066ff;
+            --secondary: #00d4ff;
+            --dark: #0a0e27;
+            --text: #1a1a1a;
+            --text-light: #666666;
+            --light: #f8f9fa;
+            --border: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--light);
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a2d5a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section h3 {
+            color: var(--text);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+        
+        .value-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 16px;
+        }
+        
+        .stat-number {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .cta-btn.outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .features-list {
+            margin-left: 1.5rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+        
+        .features-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cta-btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+            
+            header {
+                padding: 1rem;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="light-photos">
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo" title="SC Bucharest - Головна">SC Bucharest</a>
+            <a href="/" class="back-btn" aria-label="Повернутися на головну">
+                <span aria-hidden="true">←</span> На головну
+            </a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="hero">
+            <h1>Про SC Bucharest</h1>
+            <p>Новий сервіс-центр електроніки з фокусом на якість та чесність</p>
+        </div>
+        
+        <section class="section" aria-labelledby="mission-title">
+            <h2 id="mission-title">🎯 Наша Місія</h2>
+            <p>SC Bucharest - це новий сервіс-центр, де технології зустрічаються з людяністю. Ми прагнемо надавати якісний сервіс, де кожен клієнт відчуває себе особливим, а кожен пристрій отримує професійну турботу.</p>
+            <p>Наша місія - зробити ремонт та обслуговування електроніки зручним, швидким та приємним досвідом для всіх жителів Бухареста.</p>
+        </section>
+        
+        <section class="section" aria-labelledby="values-title">
+            <h2 id="values-title">💎 Наші Цінності</h2>
+            <div class="values-grid">
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">⚡</div>
+                    <h4>Швидкість</h4>
+                    <p>Більшість ремонтів займає 30–60 хвилин. Якщо випадок складний — попередимо про час до старту робіт.</p>
+                </article>
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">✅</div>
+                    <h4>Якість</h4>
+                    <p>Тільки оригінальні запчастини та професійний підхід до кожної деталі.</p>
+                </article>
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">🤝</div>
+                    <h4>Честність</h4>
+                    <p>Прозорі ціни, чесна діагностика, відкритість у спілкуванні.</p>
+                </article>
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">💡</div>
+                    <h4>Інновації</h4>
+                    <p>Сучасне обладнання та перевірені методи роботи для якісних результатів.</p>
+                </article>
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">❤️</div>
+                    <h4>Турбота</h4>
+                    <p>Кожен клієнт - це особистість. Ваш комфорт - наша мета.</p>
+                </article>
+                <article class="value-card">
+                    <div class="value-icon" aria-hidden="true" style="font-size: 3rem;">🔒</div>
+                    <h4>Безпека</h4>
+                    <p>Відеоспостереження, безпечне зберігання, захист ваших даних.</p>
+                </article>
+            </div>
+        </section>
+        
+        <section class="section" aria-labelledby="space-title">
+            <h2 id="space-title">🏢 Наш Простір</h2>
+            <p>SC Bucharest - це унікальний простір, де технології поєднуються з комфортом:</p>
+            <ul class="features-list">
+                <li><strong>Зона приймання</strong> - зручна стойка з барними стільцями та місцем для клієнтів</li>
+                <li><strong>Діагностична зона</strong> - мікроскоп з трансляцією на великий екран для прозорості</li>
+                <li><strong>Зона кастомізації</strong> - плоттер для створення унікальних захисних плівок</li>
+                <li><strong>Спільний стіл</strong> - простір для очікування, роботи, кави та зарядки пристроїв</li>
+                <li><strong>Зона для дітей</strong> - місце для навчання та розваг під час очікування</li>
+            </ul>
+        </section>
+        
+        <section class="section" aria-labelledby="commitment-title">
+            <h2 id="commitment-title">🎯 Наші Зобов'язання</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">30 хв</div>
+                    <div class="stat-label">Цільовий час ремонту</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Підтримка менеджера</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30 днів</div>
+                    <div class="stat-label">Гарантія на роботу</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Прозора діагностика</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" aria-labelledby="team-title">
+            <h2 id="team-title">👥 Наша Команда</h2>
+            <p>SC Bucharest - це команда професіоналів, які люблять свою справу:</p>
+            <ul class="features-list">
+                <li><strong>Приймальники</strong> - уважні спеціалісти, які швидко діагностують проблему</li>
+                <li><strong>Майстри</strong> - кваліфіковані техніки з відповідною підготовкою</li>
+                <li><strong>Менеджери</strong> - завжди готові допомогти та проконсультувати</li>
+                <li><strong>Викладачі</strong> - ентузіасти, які навчають дітей технологіям</li>
+            </ul>
+        </section>
+        
+        <section class="section" aria-labelledby="why-title">
+            <h2 id="why-title">✨ Чому Обрати Нас?</h2>
+            
+            <h3>🚀 Швидкість</h3>
+            <p>Більшість ремонтів — 30–60 хвилин. Для постійних клієнтів працює Fast-Track: швидший прийом і прозоре погодження робіт.</p>
+            
+            <h3>🔬 Прозорість</h3>
+            <p>Ви бачите весь процес діагностики на екрані. Відеофіксація косметичного стану. Всі операції документуються.</p>
+            
+            <h3>💎 Преміум Сервіс</h3>
+            <p>Комфортний простір, безплатний WiFi, кава, зона для дітей. Ми думаємо про кожну деталь вашого візиту.</p>
+            
+            <h3>🎓 Освіта</h3>
+            <p>Не тільки ремонтуємо, але й навчаємо. <a href="/#courses" title="Дитячі курси SC Bucharest">Курси для дітей</a>, тренінги безпеки для дорослих.</p>
+            
+            <h3>🛡️ Захист</h3>
+            <p><a href="/#gork" title="GORK Protect програма">GORK Protect</a> програма, безплатні чистки, безперервна підтримка <a href="/#manager" title="Менеджер-підписка">менеджера</a>. Ваші пристрої під опікою.</p>
+        </section>
+        
+        <section class="cta-section" aria-labelledby="cta-title">
+            <h2 id="cta-title">Приєднуйтесь до Нашої Спільноти</h2>
+            <p>Станьте частиною SC Bucharest сім'ї</p>
+            <a href="/#contact" class="cta-btn" title="Зв'язатися з SC Bucharest">Зв'язатися з нами</a>
+            <a href="/#manager" class="cta-btn outline" title="Менеджер-підписка SC Bucharest">Менеджер-Підписка</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 <a href="/" title="SC Bucharest">SC Bucharest</a>. Всі права захищені.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/" title="Головна">Головна</a> · 
+            <a href="/calculator.html" title="Калькулятор цін">Калькулятор</a> · 
+            <a href="/faq.html" title="FAQ">FAQ</a> · 
+            <a href="/privacy.html" title="Приватність">Приватність</a>
+        </p>
+    </footer>
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Про SC Bucharest",
+        "description": "Дізнайтеся більше про SC Bucharest - новий сервіс-центр електроніки у Бухаресті",
+        "url": "https://scbucharest.ro/about.html",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "SC Bucharest",
+            "description": "Новий сервіс-центр електроніки з фокусом на якість та чесність",
+            "foundingDate": "2024",
+            "numberOfEmployees": {
+                "@type": "QuantitativeValue",
+                "value": "10-20"
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://scbucharest.ro/"},
+                {"@type": "ListItem", "position": 2, "name": "Про Нас", "item": "https://scbucharest.ro/about.html"}
+            ]
+        }
+    }
+    </script>
+</body>
+</html>

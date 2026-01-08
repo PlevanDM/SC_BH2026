@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  sc-bucharest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sc-bucharest-website
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    # volumes:
+    #   # Optional: mount for development (commented out)
+    #   - .:/usr/share/nginx/html:ro
+    networks:
+      - sc-bucharest-network
+
+networks:
+  sc-bucharest-network:
+    driver: bridge

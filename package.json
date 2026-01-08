@@ -1,0 +1,14 @@
+{
+  "name": "sc-bucharest",
+  "version": "1.0.0",
+  "description": "SC Bucharest Website",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "author": "SC Bucharest",
+  "license": "MIT"
+}

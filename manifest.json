@@ -1,0 +1,40 @@
+{
+  "name": "SC Bucharest - Сервіс-центр електроніки",
+  "short_name": "SC Bucharest",
+  "description": "Сервіс-центр ремонту телефонів, ноутбуків та планшетів у Бухаресті",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "uk",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Записатися на ремонт",
+      "short_name": "Записатися",
+      "description": "Швидкий запис на прийом",
+      "url": "/#contact",
+      "icons": [{"src": "/favicon.svg", "sizes": "96x96"}]
+    },
+    {
+      "name": "Калькулятор цін",
+      "short_name": "Ціни",
+      "description": "Розрахувати вартість ремонту",
+      "url": "/calculator.html",
+      "icons": [{"src": "/favicon.svg", "sizes": "96x96"}]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
+

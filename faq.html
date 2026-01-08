@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Часті Питання | SC Bucharest Сервіс-центр</title>
+    <meta name="description" content="Відповіді на часті питання про послуги ремонту телефонів, менеджер-підписку, GORK Protect та інші послуги SC Bucharest у Бухаресті.">
+    <meta name="keywords" content="FAQ, часті питання, ремонт телефону Бухарест, гарантія ремонту, SC Bucharest">
+    <link rel="canonical" href="https://scbucharest.ro/faq.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ - Часті Питання | SC Bucharest">
+    <meta property="og:description" content="Відповіді на часті питання про послуги ремонту та обслуговування електроніки">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scbucharest.ro/faq.html">
+    <meta property="og:image" content="https://scbucharest.ro/favicon.svg">
+    <meta property="og:locale" content="uk_UA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FAQ - SC Bucharest">
+    <meta name="twitter:description" content="Відповіді на часті питання про послуги ремонту">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#0066ff">
+    
+    <!-- READABILITY FIRST 2026 -->
+    <link rel="stylesheet" href="/readability-fix-2026.css">
+    
+    <!-- UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="/unified-styles.css">
+    <link rel="stylesheet" href="/21st-design.css">
+    <link rel="stylesheet" href="/components-21st.css">
+    <link rel="stylesheet" href="/light-design-photos.css">
+
+    <!-- Site config (phone/address/socials) -->
+    <script defer src="/site-config.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0066ff;
+            --secondary: #00d4ff;
+            --dark: #0a0e27;
+            --text: #1a1a1a;
+            --text-light: #666666;
+            --light: #f8f9fa;
+            --border: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--light);
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        /* Search */
+        .search-box {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        
+        /* Categories */
+        .category {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* FAQ Items */
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.1);
+        }
+        
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            padding: 1.25rem 3rem 1.25rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+            font-weight: 300;
+        }
+        
+        .faq-question.active {
+            color: var(--primary);
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.8;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.25rem;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 1.25rem 1.25rem;
+        }
+        
+        .faq-answer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* CTA */
+        .cta-section {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Quick links */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-link {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .quick-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .faq-question {
+                padding: 1rem 2.5rem 1rem 1rem;
+                font-size: 1rem;
+            }
+            
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            header {
+                padding: 1rem;
+            }
+            
+            .quick-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Hidden for search */
+        .faq-item.hidden {
+            display: none;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="light-photos">
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo" title="SC Bucharest - Головна">SC Bucharest</a>
+            <a href="/" class="back-btn" aria-label="Повернутися на головну">
+                <span aria-hidden="true">←</span> На головну
+            </a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <h1>Часті Питання (FAQ)</h1>
+        <p class="subtitle">Знайдіть відповіді на найпопулярніші питання</p>
+        
+        <!-- Search -->
+        <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" 
+                   class="search-input" 
+                   placeholder="Шукати питання..." 
+                   aria-label="Пошук по FAQ"
+                   id="faq-search">
+        </div>
+        
+        <!-- Quick Links -->
+        <nav class="quick-links" aria-label="Швидкі посилання на категорії">
+            <a href="#repair" class="quick-link">📱 Ремонт</a>
+            <a href="#manager" class="quick-link">💳 Менеджер-підписка</a>
+            <a href="#gork" class="quick-link">🛡️ GORK Protect</a>
+            <a href="#courses" class="quick-link">👶 Дитячі курси</a>
+            <a href="#trade-in" class="quick-link">💼 Trade-In</a>
+            <a href="#general" class="quick-link">📍 Загальне</a>
+        </nav>
+        
+        <!-- FAQ Sections -->
+        <section id="repair">
+            <h2 class="category">📱 Послуги Ремонту</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Скільки часу займає ремонт?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Більшість ремонтів виконується за <strong>30–60 хвилин</strong>. Складніші випадки можуть займати до 2–3 годин. Перед початком робіт ми підтверджуємо орієнтовний час. Перевірте <a href="/calculator.html" title="Калькулятор вартості ремонту">наш калькулятор</a> для орієнтовних цін.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи надаєте ви гарантію на ремонт?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, ми надаємо <strong>гарантію 30 днів</strong> на всі виконані роботи. Гарантія покриває дефекти матеріалів та роботи, але не поширюється на механічні пошкодження після ремонту.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи використовуєте ви оригінальні запчастини?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, ми працюємо виключно з <strong>оригінальними та сертифікованими запчастинами</strong> від офіційних постачальників. Це забезпечує найкращу якість та сумісність.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи зберігаються мої дані під час ремонту?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ми рекомендуємо зробити резервну копію даних перед ремонтом. У більшості випадків дані зберігаються, особливо при ремонті дисплея або батареї.</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="manager">
+            <h2 class="category">💳 Менеджер-Підписка</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Що включає менеджер-підписка за €9.99/місяць?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Підписка включає: <strong>безлімітні чистки</strong> пристроїв, <strong>24/7 технічну підтримку</strong> в Telegram/WhatsApp, пріоритетну чергу, скидку 20% на послуги, історію обслуговування та діє на <strong>4 пристрої</strong> одночасно. <a href="/#manager" title="Детальніше про менеджер-підписку">Дізнатися більше →</a></p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи можна скасувати підписку?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, ви можете скасувати підписку в будь-який момент. Після скасування ви продовжите мати доступ до послуг до кінця оплаченого періоду.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Як швидко менеджер відповідає на питання?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Наші менеджери працюють 24/7 та зазвичай відповідають протягом <strong>15-30 хвилин</strong>. У робочий час відповіді можуть бути миттєвими.</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="gork">
+            <h2 class="category">🛡️ GORK Protect</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Як отримати безплатний GORK кейс?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Кейс надається безплатно при покупці нового пристрою, ремонті або обслуговуванні в нашому центрі. Просто запитайте про <a href="/#gork" title="GORK Protect програма">GORK Protect</a> при візиті.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Коли проходять тренінги безпеки?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Тренінги з кібербезпеки проводяться <strong>кожну суботу з 10:00 до 11:30</strong>. Вони безплатні для власників GORK Protect кейса. Реєстрація не потрібна.</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="courses">
+            <h2 class="category">👶 Дитячі Курси</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">З якого віку діти можуть відвідувати курси?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Курси доступні для дітей від <strong>7 років</strong>. Різні курси мають різні вікові обмеження: малювання (7+), фотографія (8+), програмування (9+), відео (10+), AI (11+), дизайн ігор (12+). <a href="/#courses" title="Дитячі курси SC Bucharest">Переглянути всі курси →</a></p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи потрібно приносити власний пристрій?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ні, ми надаємо всі необхідні пристрої для навчання. Діти працюють на наших iPad та ноутбуках під час курсів.</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="trade-in">
+            <h2 class="category">💼 Trade-In</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Як оцінюється вартість мого пристрою?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ми проводимо професійну оцінку стану пристрою: перевіряємо функціональність, косметичний стан, наявність пошкоджень. <strong>Оцінка займає 10-15 хвилин</strong>.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи оформляється угода юридично?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, всі угоди оформляються офіційно з підписанням договору викупу або утилізації. Всі операції фіксуються на відео для юридичного захисту обох сторін.</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="general">
+            <h2 class="category">📍 Загальні Питання</h2>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Які способи оплати ви приймаєте?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ми приймаємо готівку, банківські картки (Visa, Mastercard), а також безконтактні платежі через <strong>Apple Pay та Google Pay</strong>.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи є у вас парковка?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, у нас є безплатна парковка для клієнтів. Деталі уточніть при <a href="/#contact" title="Контакти SC Bucharest">записі</a>.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Чи можна залишити пристрій на ніч?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Так, всі пристрої зберігаються в безпечних умовах з відеоспостереженням. Ви можете забрати пристрій в будь-який робочий день.</p>
+                </div>
+            </article>
+            
+            <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Як записатися на прийом?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ви можете записатися через <a href="/#contact" title="Форма запису">форму на сайті</a>, через <a data-config="whatsappLink" href="https://wa.me/40721000000" title="WhatsApp" rel="noopener">WhatsApp</a> чи <a data-config="telegramLink" href="https://t.me/scbucharest" title="Telegram" rel="noopener">Telegram</a>, або просто завітати до нас без попереднього запису.</p>
+                </div>
+            </article>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <h2 id="cta-title">Не знайшли відповідь?</h2>
+            <p>Зв'яжіться з нами - ми з радістю допоможемо!</p>
+            <a href="/#contact" class="cta-btn" title="Зв'язатися з SC Bucharest">Зв'язатися з нами</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 <a href="/" title="SC Bucharest">SC Bucharest</a>. Всі права захищені.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/" title="Головна">Головна</a> · 
+            <a href="/calculator.html" title="Калькулятор цін">Калькулятор</a> · 
+            <a href="/about.html" title="Про нас">Про Нас</a> · 
+            <a href="/privacy.html" title="Приватність">Приватність</a>
+        </p>
+    </footer>
+    
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Toggle current
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('active');
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        searchInput?.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Smooth scroll for quick links
+        document.querySelectorAll('.quick-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+    
+    <!-- Schema.org FAQ Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "Часті питання - SC Bucharest",
+        "description": "Відповіді на часті питання про послуги ремонту та обслуговування електроніки",
+        "url": "https://scbucharest.ro/faq.html",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Скільки часу займає ремонт?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Більшість ремонтів виконується за 30–60 хвилин. Складніші випадки можуть займати до 2–3 годин."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Чи надаєте ви гарантію на ремонт?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Так, ми надаємо гарантію 30 днів на всі виконані роботи."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Що включає менеджер-підписка?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Підписка за €9.99/місяць включає безлімітні чистки, 24/7 підтримку, пріоритетну чергу, знижку 20% і діє на 4 пристрої."
+                }
+            }
+        ],
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://scbucharest.ro/"},
+                {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://scbucharest.ro/faq.html"}
+            ]
+        }
+    }
+    </script>
+</body>
+</html>

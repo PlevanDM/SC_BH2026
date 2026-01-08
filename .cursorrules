@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sc-bucharest-dev": {
+      "command": "npx",
+      "args": ["-y", "http-server", "-p", "8000", "-c-1"],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}
