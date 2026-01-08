@@ -1,5 +1,12 @@
 ﻿# NEXX GSM — Device Repair Service
 
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen?logo=github)](https://github.com/PlevanDM/SC_BH2026/actions)
+
 Premium сервіс-центр по ремонту телефонів, ноутбуків та мобільної електроніки у Бухаресті.
 
 ---
