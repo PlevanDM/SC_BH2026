@@ -45,21 +45,108 @@ import {
 } from "@/lib/site-config";
 import { BookingForm } from "@/components/site/BookingForm";
 
+// Animated Background Component with Modern Design
+function AnimatedHeroBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Primary Gradient Background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800"
+        animate={{
+          backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* Animated Gradient Orbs - Blue */}
+      <motion.div
+        className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+        animate={{
+          y: [0, 50, 0],
+          x: [0, 30, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Animated Gradient Orbs - Cyan */}
+      <motion.div
+        className="absolute top-1/3 -right-32 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl"
+        animate={{
+          y: [0, -40, 0],
+          x: [0, -20, 0],
+          scale: [1, 0.8, 1],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+
+      {/* Animated Gradient Orbs - Green */}
+      <motion.div
+        className="absolute bottom-0 left-1/3 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"
+        animate={{
+          y: [0, -60, 0],
+          x: [0, 40, 0],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      />
+
+      {/* Light Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255,255,255,.02) 25%, rgba(255,255,255,.02) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.02) 75%, rgba(255,255,255,.02) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,.02) 25%, rgba(255,255,255,.02) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.02) 75%, rgba(255,255,255,.02) 76%, transparent 77%, transparent)",
+            backgroundSize: "60px 60px",
+          }}
+          animate={{ backgroundPosition: ["0px 0px", "60px 60px"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      {/* Floating Particles */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-white/30 rounded-full blur-sm"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -100, 0],
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: 8 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+
+      {/* Subtle Radial Gradient Overlay */}
+      <div className="absolute inset-0 bg-radial-gradient pointer-events-none opacity-50" style={{
+        background: "radial-gradient(circle at 50% 50%, transparent 0%, rgba(15, 23, 42, 0.8) 100%)"
+      }} />
+
+      {/* Background Image with Subtle Overlay */}
+      <Image
+        src="/images/workspace.png"
+        alt="NEXX GSM workspace"
+        fill
+        className="object-cover opacity-5"
+        priority
+      />
+    </div>
+  );
+}
+
 // Hero Section Component
 function HeroSection() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
-        <Image
-          src="/images/workspace.png"
-          alt="NEXX GSM workspace"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-blue-800/80" />
-      </div>
+      <AnimatedHeroBackground />
 
       <div className="relative z-10 container mx-auto px-4 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -148,13 +235,46 @@ function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right: Real Photos */}
+          {/* Right: Real Photos with Floating Icons */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
+            className="relative space-y-4"
           >
+            {/* Floating Service Icons */}
+            <motion.div
+              className="absolute -top-8 -right-8 w-16 h-16 bg-blue-400/20 rounded-2xl backdrop-blur-sm border border-blue-300/30 flex items-center justify-center z-20"
+              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              <Smartphone className="w-8 h-8 text-blue-300" />
+            </motion.div>
+            
+            <motion.div
+              className="absolute top-32 -right-16 w-14 h-14 bg-green-400/20 rounded-xl backdrop-blur-sm border border-green-300/30 flex items-center justify-center z-20"
+              animate={{ y: [0, 15, 0], x: [0, 10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+            >
+              <Laptop className="w-7 h-7 text-green-300" />
+            </motion.div>
+
+            <motion.div
+              className="absolute bottom-40 -left-12 w-16 h-16 bg-yellow-400/20 rounded-2xl backdrop-blur-sm border border-yellow-300/30 flex items-center justify-center z-20"
+              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, delay: 0.5 }}
+            >
+              <Microscope className="w-8 h-8 text-yellow-300" />
+            </motion.div>
+
+            <motion.div
+              className="absolute bottom-20 right-0 w-14 h-14 bg-purple-400/20 rounded-xl backdrop-blur-sm border border-purple-300/30 flex items-center justify-center z-20"
+              animate={{ y: [0, -15, 0], x: [0, -10, 0] }}
+              transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
+            >
+              <Shield className="w-7 h-7 text-purple-300" />
+            </motion.div>
+
             {/* Main Photo - Reception */}
             <div className="relative h-[280px] rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-400/30">
               <Image
