@@ -87,7 +87,7 @@ function HeroSection() {
 
             <p className="text-lg text-blue-100">
               Діагностика під мікроскопом з трансляцією на екран. Більшість ремонтів — 30–60 хвилин.
-              Персональний менеджер доступний 24/7 у Telegram. Фото/відеофіксація стану при прийомі та акт прийому/видачі.
+              Фото/відеофіксація стану при прийомі та акт прийому/видачі. Юридичне оформлення кожного ремонту.
             </p>
 
             {/* Trust Badges */}
@@ -204,7 +204,6 @@ function HeroSection() {
 function StatsSection() {
   const stats = [
     { number: "30-40 хв", label: "Більшість ремонтів", icon: Clock },
-    { number: "24/7", label: "Менеджер у Telegram", icon: UserCog },
     { number: "30 днів", label: "Гарантія на роботу", icon: Award },
     { number: "100%", label: "Фіксація стану", icon: CheckCircle },
   ];
@@ -279,12 +278,6 @@ function ServicesSection() {
       title: "Ремонт Ноутбуків",
       description:
         "MacBook, Windows ноутбуки. Заміна матриці, клавіатури, апгрейд SSD/RAM. Чистка системи охолодження.",
-    },
-    {
-      icon: UserCog,
-      title: "Менеджер 24/7",
-      description:
-        "Персональний техспеціаліст у Telegram. Консультації, запис, нагадування про профілактику. €9.99/міс.",
     },
   ];
 
@@ -365,30 +358,15 @@ function PricingSection() {
       discount: "€19.99",
       features: [
         "Все з Базового плану",
-        "Персональний менеджер 24/7",
+        "Пріоритетна підтримка",
         "Безлімітні чистки",
         "4 пристрої в пакеті",
         "Пріоритетна черга",
-        "-20% на кастомізацію",
+        "-20% на всі послуги",
         "Подарунок на ДР",
       ],
       buttonText: "🚀 Підписатися -50%",
       buttonVariant: "default" as const,
-    },
-    {
-      name: "GORK",
-      description: "Для постійних клієнтів",
-      price: "€0",
-      period: "/при ремонті",
-      features: [
-        "Захисний кейс GORK",
-        "1 чистка на рік безплатно",
-        "Тренінги кібербезпеки",
-        "Контент для соцмереж",
-        "При ремонті від €50",
-      ],
-      buttonText: "Дізнатися більше",
-      buttonVariant: "outline" as const,
     },
   ];
 
@@ -407,7 +385,7 @@ function PricingSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -477,91 +455,6 @@ function PricingSection() {
             </span>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-// GORK Section
-function GORKSection() {
-  const benefits = [
-    {
-      icon: Gift,
-      title: "М'який Захисний Кейс",
-      description:
-        "Кейс з логотипом NEXX GSM + набір наклейок. Видаємо при купівлі нового ноутбука або ремонті від €50. Носіть його - отримуєте переваги.",
-    },
-    {
-      icon: Sparkles,
-      title: "Безплатна Чистка Щороку",
-      description:
-        "1 раз на рік - глибока чистка будь-якого вашого пристрою безплатно. Розбираємо, чистимо від пилу, міняємо термопасту, дезінфікуємо.",
-    },
-    {
-      icon: Lock,
-      title: "Тренінги Кібербезпеки",
-      description:
-        "Кожної суботи 10:00-11:30. Захист паролів, розпізнавання фішингу, безпека соцмереж, резервні копії. Для вас та родини безплатно.",
-    },
-    {
-      icon: Camera,
-      title: "Контент для Соцмереж",
-      description:
-        "Фото та відео вашого ноутбука у кейсі GORK як різні варіанти для вашого профіля.",
-    },
-  ];
-
-  return (
-    <section id="gork" className="py-20 bg-slate-50 dark:bg-slate-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            GORK Protect - Безплатний Кейс + Привілеї
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            М'який захисний кейс для ноутбука. Отримайте при купівлі пристрою або ремонті від €50. Власники кейса мають особливі переваги.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {benefits.map((benefit, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full hover:shadow-xl transition-shadow">
-                <div className="p-6 space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                    <benefit.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Weekly Training Highlight */}
-        <Card className="max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 border-blue-200 dark:border-blue-800">
-          <div className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2">
-              <Calendar className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              Щотижневий Тренінг Безпеки - Кожна Субота!
-            </h3>
-            <p className="text-lg mb-4">
-              <strong>10:00 - 11:30</strong> | Безплатно для власників GORK Protect кейса у NEXX GSM
-            </p>
-            <p className="text-sm text-muted-foreground">
-              <strong>Теми:</strong> Захист паролів, розпізнавання фішингу, безпека в соцмережах, резервні копії, двофакторна автентифікація, приватність даних
-            </p>
-          </div>
-        </Card>
       </div>
     </section>
   );
@@ -834,9 +727,6 @@ function GallerySection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Наш Сервіс-Центр
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Приймальня, робоча зона з мікроскопом, фасад у центрі Бухареста
-          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -874,7 +764,6 @@ export default function Home() {
       <StatsSection />
       <ServicesSection />
       <PricingSection />
-      <GORKSection />
       <CoursesSection />
       <ContactSection />
       <GallerySection />

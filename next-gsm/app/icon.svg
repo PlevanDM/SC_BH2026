@@ -1,41 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="128"
-    height="128"
-    viewBox="0 0 128 128"
-    fill="none">
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
   <!-- Background -->
   <rect width="128" height="128" fill="white" rx="24"/>
 
-  <!-- NEXX GSM Logo Compact -->
   <defs>
     <style>
-      .logo-text { fill:#0A3D78; font-family:Arial, Helvetica, sans-serif; font-weight:700; }
+      .icon-text { 
+        fill: #003366;
+        font-family: 'Arial Black', Arial, sans-serif;
+        font-weight: 900;
+      }
     </style>
   </defs>
 
   <!-- NEXX -->
-  <text x="8" y="70" font-size="48" class="logo-text" letter-spacing="-2">
-    NEXX
-  </text>
+  <text x="8" y="75" font-size="40" class="icon-text" letter-spacing="-1.5">NEXX</text>
 
-  <!-- Arrow -->
+  <!-- Стрілка/відвертка -->
   <rect
-    x="68"
-    y="14"
-    width="32"
-    height="6"
+    x="72"
+    y="15"
+    width="38"
+    height="10"
     rx="3"
-    transform="rotate(-35 68 14)"
-    fill="#0A3D78"/>
+    transform="rotate(-35 72 15)"
+    fill="#003366"/>
 
   <!-- GSM -->
-  <text x="68" y="70" font-size="40" class="logo-text" letter-spacing="1">
-    GSM
-  </text>
-
+  <text x="72" y="75" font-size="40" class="icon-text" letter-spacing="2">GSM</text>
 </svg>
-
-

@@ -9,7 +9,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <Link href="/" className="flex items-center gap-2 font-semibold">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-compact.svg" alt="NEXX GSM" className="h-10 w-auto dark:invert" />
+            <img 
+              src="/logo-compact.svg" 
+              alt="NEXX GSM" 
+              className="h-12 w-auto brightness-0 dark:brightness-0 dark:invert" 
+            />
           </Link>
 
           <nav className="flex items-center gap-3 text-sm">

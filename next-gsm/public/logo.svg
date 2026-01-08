@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1200"
-    height="300"
-    viewBox="0 0 1200 300"
-    fill="none">
-
-  <!-- Цвет -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" fill="none">
   <defs>
     <style>
-      .text { fill:#0A3D78; font-family:Arial, Helvetica, sans-serif; font-weight:700; }
+      .logo-text { 
+        fill: currentColor;
+        font-family: 'Arial Black', 'Bebas Neue', Arial, sans-serif;
+        font-weight: 900;
+        letter-spacing: -8px;
+      }
     </style>
   </defs>
 
-  <!-- NEXX -->
-  <text x="50" y="200" font-size="180" class="text" letter-spacing="-5">
-    NEXX
-  </text>
+  <!-- NEXX (жирний геометричний шрифт) -->
+  <text x="20" y="260" font-size="220" class="logo-text">NEXX</text>
 
-  <!-- Стрелка над X -->
+  <!-- Велика стрілка/відвертка над X -->
   <rect
-    x="520"
-    y="35"
-    width="120"
-    height="22"
-    rx="10"
-    transform="rotate(-35 520 35)"
-    fill="#0A3D78"/>
+    x="650"
+    y="40"
+    width="240"
+    height="60"
+    rx="15"
+    transform="rotate(-35 650 40)"
+    fill="currentColor"/>
 
-  <!-- GSM -->
-  <text x="720" y="200" font-size="140" class="text" letter-spacing="5">
-    GSM
-  </text>
-
+  <!-- GSM (такого ж розміру) -->
+  <text x="820" y="260" font-size="220" class="logo-text" letter-spacing="10">GSM</text>
 </svg>
-
-

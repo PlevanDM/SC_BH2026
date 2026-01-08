@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   phoneDisplay: "+40 721 000 000",
   whatsappNumber: "40721000000",
   telegramHandle: "scbucharest",
-  email: "info@scbucharest.ro",
+  email: "info@nextgsm.ro",
   addressLine1: "Strada Victoriei, Nr. 10",
   addressLine2: "Sector 1, București, Romania",
   mapsLat: 44.4396,
