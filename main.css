@@ -3,25 +3,41 @@
  * Уніфікація: шрифти, іконки, відступи, кольори
  */
 
-/* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES - PREMIUM 2026 PALETTE ===== */
 :root {
-    /* Colors */
-    --primary: #0066ff;
-    --primary-dark: #0052cc;
-    --primary-light: #3d8bff;
-    --secondary: #00d4ff;
+    /* Primary - Rich Sapphire Blue (Premium & Trust) */
+    --primary: #1e40af;
+    --primary-dark: #0f2460;
+    --primary-light: #3b82f6;
+    
+    /* Secondary - Vibrant Teal (Modern & Dynamic) */
+    --secondary: #06b6d4;
+    
+    /* Accent - Coral (Energy & Action) */
+    --accent: #ff6b6b;
+    --urgent: #ef4444;
+    
+    /* Success - Emerald Green */
     --success: #10b981;
     --success-dark: #059669;
+    
+    /* Warning - Amber */
     --warning: #f59e0b;
+    
+    /* Danger - Red */
     --danger: #ef4444;
-    --dark: #0a0e27;
-    --text: #1a1a1a;
-    --text-muted: #6b7280;
-    --text-light: #9ca3af;
+    
+    /* Backgrounds & Text */
+    --dark: #0f172a;
+    --dark-hover: #1e293b;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
     --light: #f8fafc;
+    --light-hover: #f1f5f9;
     --white: #ffffff;
-    --border: #e5e7eb;
-    --border-dark: #d1d5db;
+    --border: #e2e8f0;
+    --border-dark: #cbd5e1;
 
     /* Spacing System (8px base) */
     --space-1: 0.25rem;  /* 4px */
