@@ -106,20 +106,12 @@
     <meta name="theme-color" content="#0066ff">
     <meta name="msapplication-TileColor" content="#0066ff">
     
-    <!-- READABILITY FIRST 2026 - CRITICAL -->
-    <link rel="stylesheet" href="/readability-fix-2026.css">
-    
-    <!-- UNIFIED DESIGN SYSTEM -->
-    <link rel="stylesheet" href="/unified-styles.css">
-    
-    <!-- 21ST CENTURY DESIGN - DARK THEME -->
-    <link rel="stylesheet" href="/21st-design.css">
-    
-    <!-- 21ST CENTURY COMPONENTS -->
-    <link rel="stylesheet" href="/components-21st.css">
-    
-    <!-- LIGHT DESIGN WITH PHOTOS -->
-    <link rel="stylesheet" href="/light-design-photos.css">
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/main.css">
 
     <!-- Site config (phone/address/socials) -->
     <script defer src="/site-config.js"></script>
@@ -220,7 +212,6 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text);
             background: white;
             line-height: 1.6;
@@ -2054,6 +2045,16 @@
             <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
                 ⏰ <strong style="color: var(--warning);">Обмежено:</strong> Лише <span id="slots-left" style="color: var(--warning); font-weight: 700;">5 слотів</span> залишилось на цей тиждень
             </p>
+
+            <!-- Social Proof: Rating -->
+            <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                <div style="color: #ffc107; font-size: 1.25rem;">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <strong>4.9/5.0</strong> <span style="color: rgba(255,255,255,0.6);"> (150+ відгуків)</span>
+                </span>
+            </div>
             </div>
             
             <!-- Right: REAL PHOTOS - Trust Building -->
