@@ -1,4 +1,4 @@
-# SC Bucharest Development
+﻿# NEXX GSM Development
 
 This is a premium service center website with:
 - Docker support (nginx:alpine)
@@ -40,3 +40,4 @@ npm start
 - Port: 8080:80
 - Server: nginx:alpine
 - Auto-restart enabled
+

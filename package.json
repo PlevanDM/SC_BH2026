@@ -1,14 +1,31 @@
 {
-  "name": "sc-bucharest",
+  "name": "nexx-gsm",
   "version": "1.0.0",
-  "description": "SC Bucharest Website",
+  "description": "NEXX GSM Website",
   "scripts": {
     "start": "npx http-server -p 8000 -c-1",
     "docker:build": "docker-compose build",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
-    "docker:logs": "docker-compose logs -f"
+    "docker:logs": "docker-compose logs -f",
+
+    "next:install": "npm --prefix next-gsm install",
+    "next:dev": "npm --prefix next-gsm run dev",
+    "next:lint": "npm --prefix next-gsm run lint",
+    "next:build": "npm --prefix next-gsm run build",
+    "next:start": "npm --prefix next-gsm run start"
   },
-  "author": "SC Bucharest",
-  "license": "MIT"
+  "author": "NEXX GSM",
+  "license": "MIT",
+  "main": "site-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlevanDM/SC_BH2026.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PlevanDM/SC_BH2026/issues"
+  },
+  "homepage": "https://github.com/PlevanDM/SC_BH2026#readme"
 }

@@ -1,5 +1,5 @@
-/**
- * SC Bucharest - Multilingual Translations
+﻿/**
+ * NEXX GSM - Multilingual Translations
  * Languages: Ukrainian (uk), Romanian (ro)
  */
 
@@ -63,14 +63,14 @@ const translations = {
         
         // GORK Section
         gork_title: "GORK Protect - Програма Захисту для Ноутбуків",
-        gork_subtitle: "Безплатні привілеї при використанні захисного кейса SC Bucharest",
+        gork_subtitle: "Безплатні привілеї при використанні захисного кейса NEXX GSM",
         
         // Courses Section
-        courses_title: "Дитячі Технологічні Курси у SC Bucharest",
+        courses_title: "Дитячі Технологічні Курси у NEXX GSM",
         courses_subtitle: "Розвивайте дитину в сучасному цифровому світі. Безплатні програми для клієнтів!",
         
         // Pricing Section
-        pricing_title: "Тарифи та Підписки SC Bucharest",
+        pricing_title: "Тарифи та Підписки NEXX GSM",
         pricing_subtitle: "Оберіть оптимальний план для вашої електроніки",
         
         // Contact Section
@@ -83,12 +83,12 @@ const translations = {
         contact_working_hours_value: "Пн-Пт: 09:00-19:00, Сб: 10:00-16:00",
         
         // Footer
-        footer_about: "SC Bucharest",
+        footer_about: "NEXX GSM",
         footer_about_desc: "Сучасний сервіс-центр по ремонту електроніки у Бухаресті. Ремонт телефонів, ноутбуків, планшетів та мобільної електроніки.",
         footer_services: "Послуги",
         footer_info: "Інформація",
         footer_contacts: "Контакти & Соцмережі",
-        footer_copyright: "© 2026 SC Bucharest. Сервіс-центр електроніки у Бухаресті. Всі права захищені.",
+        footer_copyright: "© 2026 NEXX GSM. Сервіс-центр електроніки у Бухаресті. Всі права захищені.",
         footer_privacy: "Політика приватності",
         footer_terms: "Умови використання",
         
@@ -173,14 +173,14 @@ const translations = {
         
         // GORK Section
         gork_title: "GORK Protect - Program Protecție pentru Laptopuri",
-        gork_subtitle: "Privilegii gratuite când folosiți husa de protecție SC Bucharest",
+        gork_subtitle: "Privilegii gratuite când folosiți husa de protecție NEXX GSM",
         
         // Courses Section
-        courses_title: "Cursuri Tehnologice pentru Copii la SC Bucharest",
+        courses_title: "Cursuri Tehnologice pentru Copii la NEXX GSM",
         courses_subtitle: "Dezvoltați copilul în lumea digitală modernă. Programe gratuite pentru clienți!",
         
         // Pricing Section
-        pricing_title: "Tarife și Abonamente SC Bucharest",
+        pricing_title: "Tarife și Abonamente NEXX GSM",
         pricing_subtitle: "Alegeți planul optim pentru electronica dvs.",
         
         // Contact Section
@@ -193,12 +193,12 @@ const translations = {
         contact_working_hours_value: "Lun-Vin: 09:00-19:00, Sâm: 10:00-16:00",
         
         // Footer
-        footer_about: "SC Bucharest",
+        footer_about: "NEXX GSM",
         footer_about_desc: "Centru service modern pentru reparații electronică în București. Reparații telefoane, laptopuri, tablete și electronică mobilă.",
         footer_services: "Servicii",
         footer_info: "Informații",
         footer_contacts: "Contacte & Social Media",
-        footer_copyright: "© 2026 SC Bucharest. Centru service electronică în București. Toate drepturile rezervate.",
+        footer_copyright: "© 2026 NEXX GSM. Centru service electronică în București. Toate drepturile rezervate.",
         footer_privacy: "Politică de confidențialitate",
         footer_terms: "Termeni de utilizare",
         
@@ -305,5 +305,6 @@ function getBrowserLanguage() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { translations, switchLanguage };
 }
+
 
 

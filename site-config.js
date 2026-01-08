@@ -1,5 +1,5 @@
-/**
- * SC Bucharest - Site Config
+﻿/**
+ * NEXX GSM - Site Config
  * One place to set real phone/address/links for production.
  *
  * IMPORTANT: Replace placeholders below with REAL values.
@@ -103,5 +103,6 @@ if (document.readyState === "loading") {
 } else {
   applySiteConfig();
 }
+
 
 

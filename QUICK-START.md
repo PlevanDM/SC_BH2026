@@ -1,4 +1,4 @@
-# SC Bucharest Quick Start Guide
+﻿# NEXX GSM Quick Start Guide
 
 ## 🚀 Швидкий запуск (Windows)
 
@@ -77,3 +77,4 @@ ports:
 1. Перевірте, чи запущений Docker Desktop
 2. Перевірте логи: `docker-compose logs`
 3. Перезапустіть Docker Desktop
+

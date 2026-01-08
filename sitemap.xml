@@ -14,7 +14,7 @@
     
     <!-- Калькулятор вартості ремонту -->
     <url>
-        <loc>https://scbucharest.ro/calculator.html</loc>
+        <loc>https://scbucharest.ro/calculator</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -22,7 +22,7 @@
     
     <!-- Про нас -->
     <url>
-        <loc>https://scbucharest.ro/about.html</loc>
+        <loc>https://scbucharest.ro/about</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -30,7 +30,7 @@
     
     <!-- FAQ -->
     <url>
-        <loc>https://scbucharest.ro/faq.html</loc>
+        <loc>https://scbucharest.ro/faq</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -74,14 +74,14 @@
     
     <!-- Юридичні сторінки -->
     <url>
-        <loc>https://scbucharest.ro/privacy.html</loc>
+        <loc>https://scbucharest.ro/privacy</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>https://scbucharest.ro/terms.html</loc>
+        <loc>https://scbucharest.ro/terms</loc>
         <lastmod>2026-01-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
