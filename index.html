@@ -2218,7 +2218,7 @@
     </section>
 
     <!-- Kids Courses Section - WITH REAL PHOTOS -->
-    <section id="courses" class="section-with-photo" style="background-image: url('/images/kids-training-1.jpg'); padding: 5rem 2rem;">
+    <section id="courses" class="section-with-photo" style="background-image: url('/images/kids-training-1.png'); padding: 5rem 2rem;">
         <div style="text-align: center; margin-bottom: 3rem;">
             <h2 style="color: #0a0e27;">👶 Дитячі Курси & Майстер-класи</h2>
             <p style="color: #4b5563; max-width: 700px; margin: 1rem auto;">Реальні фото наших занять — діти навчаються технологіям у грі</p>
@@ -2903,7 +2903,9 @@
             if ('loading' in HTMLImageElement.prototype) {
                 const images = document.querySelectorAll('img[loading="lazy"]');
                 images.forEach(img => {
-                    img.src = img.dataset.src;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
                 });
             }
 
