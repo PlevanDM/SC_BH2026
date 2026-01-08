@@ -1472,6 +1472,52 @@ body.dark-21st header a:hover {
     color: var(--gradient-blue) !important;
 }
 
+/* ===== HERO SECTION - MODERN ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0f1a 0%, #1a1a2e 50%, #0d1117 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10,15,26,0.9) 0%, rgba(26,26,46,0.85) 50%, rgba(13,17,23,0.9) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+}
+
 /* ===== HERO SECTION - GRADIENT ANIMATED ===== */
 body.dark-21st .hero {
     background: linear-gradient(135deg,
@@ -2217,6 +2263,73 @@ body.light-photos .hero {
 .section-with-photo > * {
     position: relative;
     z-index: 2;
+}
+
+/* ===== CUSTOM COMPONENT STYLES ===== */
+
+.live-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.live-text {
+    font-size: 0.9rem;
+    color: var(--success);
+    font-weight: 600;
+}
+
+.trust-badges {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.trust-badge {
+    padding: 0.75rem 1.25rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    border-radius: 8px;
+    color: var(--success);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    background: rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-cta-hero {
+    background: linear-gradient(135deg, var(--success), var(--success-dark)) !important;
+    position: relative;
+}
+
+.urgency-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 /* Photo overlay cards */

@@ -1864,22 +1864,22 @@
     </div>
 
     <!-- Hero Section with REAL PHOTOS -->
-    <section class="hero" id="main-content" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0f1a 0%, #1a1a2e 50%, #0d1117 100%); min-height: 90vh; display: flex; align-items: center;">
+    <section class="hero" id="main-content">
         
         <!-- Real Photo Background with Overlay -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
-            <img src="/images/workspace.png" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;" onerror="this.style.display='none'">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10,15,26,0.9) 0%, rgba(26,26,46,0.85) 50%, rgba(13,17,23,0.9) 100%);"></div>
+        <div class="hero-bg">
+            <img src="/images/workspace.png" alt="SC Bucharest workspace" class="hero-bg-img">
+            <div class="hero-bg-overlay"></div>
         </div>
         
-        <div class="hero-content" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1400px; margin: 0 auto; padding: 2rem; align-items: center;">
+        <div class="hero-content">
             
             <!-- Left: Text Content -->
             <div>
             <!-- Live Activity Indicator (Психологія: Social Proof) -->
-            <div class="live-counter" style="margin-bottom: 1rem;">
+            <div class="live-counter">
                 <span class="dot"></span>
-                <span style="font-size: 0.9rem; color: var(--success); font-weight: 600;">
+                <span class="live-text">
                     <span id="online-count">3</span> клієнтів зараз на сайті
                 </span>
             </div>
@@ -1888,7 +1888,7 @@
             <p data-i18n="hero_subtitle">Діагностика під мікроскопом з трансляцією на екран. Більшість ремонтів — 30–60 хвилин. Персональний менеджер доступний 24/7 у Telegram. Фото/відеофіксація стану при прийомі та акт прийому/видачі.</p>
             
             <!-- Trust Badges (Психологія: Довіра) -->
-            <div class="trust-badges" style="margin: 1.5rem 0;">
+            <div class="trust-badges">
                 <div class="trust-badge">
                     📋 Фіксація стану
                 </div>
@@ -1901,12 +1901,9 @@
             </div>
             
             <div class="hero-buttons">
-                <!-- Психологія: Дія (зелений колір = "go") + Терміновість -->
-                <button class="btn-primary" onclick="openBooking()" 
-                        style="background: linear-gradient(135deg, var(--success), var(--success-dark)); position: relative;"
-                        title="Записатися на прийом до сервіс-центру SC Bucharest">
+                <button class="btn-primary btn-cta-hero" onclick="openBooking()" title="Записатися на прийом до сервіс-центру SC Bucharest">
                     📅 <span data-i18n="btn_booking_primary">Отримати безплатну консультацію</span>
-                    <span class="urgency-badge" style="position: relative; top: 0; right: 0; margin-left: 0.5rem;">Сьогодні</span>
+                    <span class="urgency-badge">Сьогодні</span>
                 </button>
                 <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})" title="Дізнатися більше про послуги сервіс-центру">
                     ↓ <span data-i18n="btn_learn_more">Переглянути послуги</span>
